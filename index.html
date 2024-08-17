@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <title>猫の日記</title>
+</head>
+
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="img/bg.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <div class="titleblock">
+            <img src="./img/cat-face-black.svg" width="60" alt="Dice">
+            <p>猫の日記</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="field_center">
+
+                <div class="subdiv subdiv_left">
+                    <div class="titleblock">
+                        <img src="./img/paw.png" width="30" alt="">
+                        <p>Date</p>
+                    </div>
+                    <!-- Calendar -->
+                    <div id="datepicker-inline" inline-datepicker data-date="08/15/2024"></div>
+                </div>
+
+                <div class="subdiv subdiv_right">
+                    <div class="titleblock">
+                        <img src="./img/cat-list.svg" width="30" alt="">
+                        <p>Diary</p>
+                    </div>
+                    <!-- Textarea -->
+                    <textarea id="message" rows="25" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="..."></textarea>
+
+                    <!-- Button -->
+                    <div class="localstorage">
+                        <button id="saveButton" type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">保存</button>
+                        <button id="showHistoryButton" type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">履歴</button>
+                        <button id="clearAllButton" type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">削除</button>
+                    </div>
+
+                    <!-- List to display saved date and message history -->
+                    <ul id="dateMessageHistoryList" class="mt-4 list-disc"></ul>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>Copyright 2024 (C)</div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
